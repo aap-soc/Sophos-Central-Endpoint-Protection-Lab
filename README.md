@@ -37,7 +37,7 @@ Downloaded the Complete Windows Installer from:
 
 The installer ran silently on the Windows 10 VM with no configuration required. After approximately 2 minutes, the device appeared in the Sophos Central console under **Endpoint → Computers**.
 
-![Agent installed and showing Protected status](screenshots/image1.png)
+![Agent installed and showing Protected status](Screenshots/endpoint_protected_status-image1.png)
 
 The device **DESKTOP-79QNLKS** registered with the following status:
 - **Online** - active connection to the Sophos cloud console
