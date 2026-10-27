@@ -59,7 +59,7 @@ The `eicar.com` file was downloaded and executed on the protected Windows VM. So
 
 **Result:** 4 detections logged in **Threat Analysis Center → Threat Graphs**
 
-![EICAR detections in Threat Graphs](images/image2.png)
+![EICAR detections in Threat Graphs](Screenshots/threat_graph_EICAR_detections-image2.png)
 
 Each detection shows:
 - **Name:** EICAR-AV-Test
@@ -92,7 +92,7 @@ SELECT name, path FROM processes;
 
 **Purpose:** Returns a full list of every process currently running on the endpoint, along with the file path of its executable. This is the first check in any malware investigation — establishing a baseline of what is running before narrowing down suspicious activity.
 
-![All running processes query results](images/image3.png)
+![All running processes query results]Screenshots/query_1_processes-image3.png)
 
 **Result:** Multiple processes returned including `[System Process]`, `System`, `Registry`, `smss.exe` (`C:\Windows\System32\smss.exe`), `csrss.exe` (`C:\Windows\System32\csrss.exe`), and `wininit.exe` (`C:\Windows\System32\wininit.exe`) — all standard Windows system processes running from expected paths.
 
@@ -107,7 +107,7 @@ SELECT name, path FROM processes WHERE name = 'explorer.exe';
 
 **Purpose:** Uses a WHERE clause to filter results to a single named process. In a real investigation, once a suspicious process is identified, this query confirms whether it is running and, critically, where it is running from. Malware often impersonates legitimate process names while running from unexpected directories.
 
-![explorer.exe query result](images/image4.png)
+![explorer.exe query result](Screenshots/query_2_explorer_process-image4.png)
 
 **Result:** One row returned - `explorer.exe` running from `C:\Windows\explorer.exe`. The path is the expected system location, confirming this is the legitimate Windows shell process and not an impersonator.
 
@@ -122,7 +122,7 @@ SELECT username, tty, host FROM logged_in_users;
 
 **Purpose:** Returns active user sessions on the endpoint - useful when investigating unauthorised access or confirming who was logged in at the time of an incident.
 
-![Logged in users query — no results](images/image5.png)
+![Logged in users query — no results](Screenshots/query_3_logged_in_users-image5.png)
 
 **Result:** No items returned. This is expected behaviour on Windows. The `logged_in_users` osquery table has limited support on Windows endpoints and does not reliably report interactive console sessions. The query completed successfully (1/1 Devices completed) - there was simply no data to return from this table on a Windows host. This table functions correctly on Linux and macOS endpoints.
 
@@ -136,7 +136,7 @@ SELECT pid, port, family FROM listening_ports;
 
 **Purpose:** Lists every port the machine is currently listening on, with the process ID responsible and the address family (IPv4/IPv6). If malware opens a backdoor, it will appear here as an unexpected listening port. This query is a standard check during network-based threat investigation.
 
-![Open network ports query results](images/image6.png)
+![Open network ports query results](Screenshots/query_4_listening_ports-image6.png)
 
 **Result:** Multiple ports returned including 135, 445, 5040, 7680, 49064, 49065, and 60000 - all standard Windows system ports. Port 135 is RPC, port 445 is SMB (Windows file sharing). No unexpected or suspicious listening ports were identified.
 
