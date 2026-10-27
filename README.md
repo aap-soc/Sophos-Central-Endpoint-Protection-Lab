@@ -10,7 +10,7 @@ A lab covering agent deployment and real-time threat detection using an industry
 
 ## Overview
 
-This lab demonstrates hands-on use of Sophos Central Endpoint Protection — a commercial endpoint security platform used in enterprise environments. It covers agent deployment, real-time threat detection using an industry-standard test file, and live endpoint querying using osquery SQL through Sophos Live Discover.
+This lab demonstrates hands-on use of Sophos Central Endpoint Protection, a commercial endpoint security platform used in enterprise environments. It covers agent deployment, real-time threat detection using an industry-standard test file, and live endpoint querying using osquery SQL through Sophos Live Discover.
 
 **Skills demonstrated:**
 - Endpoint agent deployment and console verification
@@ -37,21 +37,21 @@ Downloaded the Complete Windows Installer from:
 
 The installer ran silently on the Windows 10 VM with no configuration required. After approximately 2 minutes, the device appeared in the Sophos Central console under **Endpoint → Computers**.
 
-![Agent installed and showing Protected status](images/image1.png)
+![Agent installed and showing Protected status](screenshots/image1.png)
 
 The device **DESKTOP-79QNLKS** registered with the following status:
-- **Online** — active connection to the Sophos cloud console
+- **Online** - active connection to the Sophos cloud console
 - **Tamper protection: On** — prevents unauthorised removal of the agent
-- **Encryption: ✓** — device encryption policy applied
-- **DNS & ZTNA: ✓** — Zero Trust Network Access policy applied
-- **Agent mode: XDR** — extended detection and response tier active
+- **Encryption: ✓** - device encryption policy applied
+- **DNS & ZTNA: ✓** - Zero Trust Network Access policy applied
+- **Agent mode: XDR** - extended detection and response tier active
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 ## Part 2 - EICAR Threat Detection Test
 
-The EICAR test file is an industry-standard, harmless string that every antivirus product is required to detect. It is not real malware — it exists specifically to verify that endpoint protection is functioning.
+The EICAR test file is an industry-standard, harmless string that every antivirus product is required to detect. It is not real malware - it exists specifically to verify that endpoint protection is functioning.
 
 **Source:** https://www.eicar.org/download-anti-malware-testfile/
 
@@ -66,7 +66,7 @@ Each detection shows:
 - **Status:** New
 - **Priority:** Low
 - **Device:** DESKTOP-79QNLKS
-- **Time:** Oct 26, 2026 — between 4:10 PM and 4:15 PM
+- **Time:** Oct 26, 2026 - between 4:10 PM and 4:15 PM
 
 This confirms that Sophos real-time protection is active and correctly identifying and logging threat events on the endpoint.
 
