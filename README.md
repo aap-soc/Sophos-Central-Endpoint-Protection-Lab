@@ -94,7 +94,7 @@ SELECT name, path FROM processes;
 
 ![All running processes query results]Screenshots/query_1_processes-image3.png)
 
-**Result:** Multiple processes returned including `[System Process]`, `System`, `Registry`, `smss.exe` (`C:\Windows\System32\smss.exe`), `csrss.exe` (`C:\Windows\System32\csrss.exe`), and `wininit.exe` (`C:\Windows\System32\wininit.exe`) — all standard Windows system processes running from expected paths.
+**Result:** Multiple processes returned including `[System Process]`, `System`, `Registry`, `smss.exe` (`C:\Windows\System32\smss.exe`), `csrss.exe` (`C:\Windows\System32\csrss.exe`), and `wininit.exe` (`C:\Windows\System32\wininit.exe`), all standard Windows system processes running from expected paths.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
